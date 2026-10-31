@@ -59,5 +59,40 @@ main {
     <div class="service">₿<p>Crypto</p></div>
   </div>
 </main>
+  
+<section style="background:white;padding:20px;border-radius:15px;margin:20px 0;">
+  <h2>💸 Envoyer de l'argent</h2>
+  <p>Effectuer un transfert SahelPay</p>
+
+  <label>Nom du bénéficiaire</label>
+  <input id="beneficiaire" type="text" placeholder="Nom du destinataire" style="width:100%;padding:12px;box-sizing:border-box;margin:10px 0;">
+
+  <label>Numéro du destinataire</label>
+  <input id="numero" type="tel" placeholder="Numéro de téléphone" style="width:100%;padding:12px;box-sizing:border-box;margin:10px 0;">
+
+  <label>Montant en FCFA</label>
+  <input id="montant" type="number" placeholder="Exemple : 10000" min="1" style="width:100%;padding:12px;box-sizing:border-box;margin:10px 0;">
+
+  <p>Commission SahelPay : 1 %</p>
+  <p id="commission">Commission : 0 FCFA</p>
+  <p id="total">Total à payer : 0 FCFA</p>
+
+  <button onclick="
+    const m = Number(document.getElementById('montant').value);
+    const n = document.getElementById('beneficiaire').value.trim();
+    const p = document.getElementById('numero').value.trim();
+    if(!n || !p || !Number.isFinite(m) || m <= 0) {
+      alert('Veuillez remplir correctement les champs.');
+    } else {
+      const c = Math.round(m * 0.01);
+      document.getElementById('commission').textContent = 'Commission : ' + c.toLocaleString('fr-FR') + ' FCFA';
+      document.getElementById('total').textContent = 'Total à payer : ' + (m+c).toLocaleString('fr-FR') + ' FCFA';
+      alert('Simulation uniquement. Aucun argent ne sera transféré.');
+    }
+  " style="background:#6336a0;color:white;padding:15px;width:100%;border:0;border-radius:10px;">
+    Calculer mon transfert
+  </button>
+</section>
+
 </body>
 </html>
