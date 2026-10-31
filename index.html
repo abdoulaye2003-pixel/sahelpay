@@ -68,7 +68,19 @@ main {
   <input id="beneficiaire" type="text" placeholder="Nom du destinataire" style="width:100%;padding:12px;box-sizing:border-box;margin:10px 0;">
 
   <label>Numéro du destinataire</label>
-  <input id="numero" type="tel" placeholder="Numéro de téléphone" style="width:100%;padding:12px;box-sizing:border-box;margin:10px 0;">
+
+<select id="indicatif">
+  <option value="+227" selected>🇳🇪 Niger (+227)</option>
+  <option value="+226">🇧🇫 Burkina Faso (+226)</option>
+  <option value="+223">🇲🇱 Mali (+223)</option>
+  <option value="+225">🇨🇮 Côte d'Ivoire (+225)</option>
+  <option value="+221">🇸🇳 Sénégal (+221)</option>
+  <option value="+228">🇹🇬 Togo (+228)</option>
+  <option value="+233">🇬🇭 Ghana (+233)</option>
+</select>
+
+<input id="numero" type="tel" placeholder="Numéro de téléphone">
+  
 
   <label>Montant en FCFA</label>
   <input id="montant" type="number" placeholder="Exemple : 10000" min="1" style="width:100%;padding:12px;box-sizing:border-box;margin:10px 0;">
